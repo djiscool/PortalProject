@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+.page-header {
+  color: #643279;
+  font-weight: 400;
+}
+
+.form-field {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}

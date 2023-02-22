@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+
+
+@include mat.core();
+
+$wfs-purple-palette: (
+    50: #ece6ef,
+    100: #d1c2d7,
+    200: #b299bc,
+    300: #9370a1,
+    400: #7b518d,
+    500: #643279,
+    600: #5c2d71,
+    700: #522666,
+    800: #481f5c,
+    900: #361349,
+    A100: #d185ff,
+    A200: #be52ff,
+    A400: #ab1fff,
+    A700: #a105ff,
+    contrast: (
+    50: #ffffff,
+    100: #ffffff,
+    200: #ffffff,
+    300: #ffffff,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #ffffff,
+    A200: #ffffff,
+    A400: #ffffff,
+    A700: #fffffft, ) );
+
+$my-theme-primary: mat.define-palette($wfs-purple-palette, 500, A100, A100);
+$my-theme-accent: mat.define-palette(mat.$green-palette, 600, 500, 700);
+
+$my-theme: mat.define-light-theme(( color: ( primary: $my-theme-primary, accent: $my-theme-accent), typography: mat.define-typography-config(), density: 0, ));
+
+@include mat.all-component-themes($my-theme);

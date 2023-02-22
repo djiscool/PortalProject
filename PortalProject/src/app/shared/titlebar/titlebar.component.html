@@ -1,0 +1,17 @@
+<mat-toolbar color="primary">
+  <span>{{title}}</span>
+  <span class="example-spacer"></span>
+  <button *ngIf="addUser" mat-fab extended class="button" routerLink="/new-user">
+    <mat-icon aria-hidden="false" aria-label="Add Icon" fontIcon="add"></mat-icon>
+    NEW USER
+  </button>
+  <button *ngIf="newUser" mat-fab extended class="button" (click)="inviteUser()">
+    <mat-icon aria-hidden="false" aria-label="Invite User" fontIcon="add"></mat-icon>
+    INVITE USER
+  </button>
+  <button *ngIf="newUser" mat-fab extended class="button" routerLink="/company-settings">
+    <mat-icon aria-hidden="false" aria-label="Cancel" fontIcon="close"></mat-icon>
+    CANCEL
+  </button>
+  <a mat-fab extended class="button" (click)="logout()">LOGOUT</a>
+</mat-toolbar>

@@ -1,0 +1,18 @@
+.mat-stepper-horizontal {
+  margin-top: 8px;
+}
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+
+.form-field {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.page-header {
+  color: #643279;
+  font-weight: 400;
+}

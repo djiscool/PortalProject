@@ -1,0 +1,98 @@
+<app-titlebar [title]="title" (logoutEvent)="logout()"/>
+<mat-stepper linear labelPosition="bottom" #stepper>
+  <mat-step [stepControl]="firstFormGroup">
+    <mat-card>
+      <mat-card-content>
+        <h2 class="page-header">Enter Member Details</h2>
+        <p>Please enter member details below. These details will be used to perfomr eligibility check. Details marked with * are required to copmlete this step.</p>
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Eligibility Check</ng-template>
+          <mat-grid-list cols="3" rows="2" rowHeight="100px">
+            <mat-grid-tile>
+              <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Agency</mat-label>
+                <input matInput placeholder="Agency" formControlName="firstCtrl" required>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Member ID</mat-label>
+                <input matInput placeholder="Member ID" formControlName="secondCtrl" required>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Case Manager</mat-label>
+                <mat-select matInput placeholder="Case Manager" formControlName="thirdCtrl" required>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+            <mat-grid-tile>
+              <mat-form-field appearance="fill" class="form-field">
+                <mat-label>Referral Source</mat-label>
+                <mat-select matInput placeholder="Referral Source" formControlName="fourthCtrl" required>
+                  <mat-option value="one">First option</mat-option>
+                  <mat-option value="two">Second option</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </mat-grid-tile>
+          </mat-grid-list>
+          <div style="text-align: center;">
+            <button mat-fab extended matStepperNext>
+              <div style="display: flex; align-items: center;">
+                FIND MEMBER
+                <mat-icon style="padding-left:5px;" aria-hidden="false" aria-label="Find Member" fontIcon="search"></mat-icon>
+              </div>
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup" label="Member Details">
+    <mat-card>
+      <mat-card-content>
+        <form [formGroup]="secondFormGroup">
+          <mat-form-field appearance="fill">
+            <mat-label>Address</mat-label>
+            <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                   required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-card-content>
+        </mat-card>
+          
+</mat-step>
+  <mat-step>
+    <mat-card>
+      <mat-card-content>
+        <ng-template matStepLabel>Meal Plan Selection</ng-template>
+        <p>Select your meal plan.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </mat-card-content>
+        </mat-card>
+          
+</mat-step>
+  <mat-step>
+    <mat-card>
+      <mat-card-content>
+        <ng-template matStepLabel>Confirmation</ng-template>
+        <p>You are now done.</p>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button (click)="stepper.reset()">Reset</button>
+        </div>
+      </mat-card-content>
+        </mat-card>
+          
+</mat-step>
+</mat-stepper>

@@ -1,0 +1,53 @@
+<app-titlebar [title]="title" [newUser]="true" (logoutEvent)="logout()" (inviteUserEvent)="inviteUser()" (cancelInviteEvent)="cancel()" />
+<mat-card>
+  <mat-card-content>
+    <h2 class="page-header">User Details</h2>
+    <form [formGroup]="firstFormGroup" id="ngForm" #userForm="ngForm">
+      <ng-template>User Details</ng-template>
+      <mat-grid-list cols="3" rows="2" rowHeight="100px">
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" formControlName="firstName" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" formControlName="lastName" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Role</mat-label>
+            <mat-select matInput placeholder="Role" formControlName="role" required>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="email" required>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Login Method</mat-label>
+            <mat-select matInput placeholder="Login Method" formControlName="loginMethod" required>
+              <mat-option value="one">First option</mat-option>
+              <mat-option value="two">Second option</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </mat-grid-tile>
+        <mat-grid-tile>
+          <mat-form-field appearance="fill" class="form-field">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="Password" formControlName="password" required>
+          </mat-form-field>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </form>
+  </mat-card-content>
+</mat-card>
